@@ -1,0 +1,581 @@
+/*Añadimos nuestra fuente de goglee fonts :3 */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Quicksand:wght@300&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/*Primero Vamos a resetear losa estilos bases que nos proporciona el navegador*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   background: #FFF2DB; 
+   font-family: "Dancing Script", monospace;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #9d0707;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: 48px;
+}
+
+h3 {
+    font-size: 28px;
+    margin-top: 48px;
+}
+
+h4 {
+    font-size: 25px;
+    margin-top: 21px;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+strong {
+    font-weight: bold;
+    color: #9d0707;
+}
+
+/*Enlaces*/
+
+a {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {}
+
+a:active {}
+
+/*Listas*/
+
+ul {
+    list-style: none;
+}
+
+.header {
+    
+    border-bottom: 16px;
+    padding: 24px;
+    
+    /*Por si acaso aca podriamos poner un border :) */
+}
+
+.header__container {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.header__brand {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.header__name {
+    margin-bottom: 8px;
+
+}
+
+.header__tagline {
+    font-size: 20px;
+}
+
+.nav {
+    text-align: center;
+}
+
+.nav__list {
+    display: inline-block;
+}
+
+.nav__item {
+    display: inline-block;
+    margin: 0 16px;
+}
+
+.nav__link {
+    padding: 15px;
+    font-weight: 500;
+    display: inline-block;
+    /*Recuerda agregar color y otros estilos  :3*/
+}
+
+.nav__link:hover {
+    font-size: 19px;
+    color: #9d0707;
+    
+}
+
+/* ----! Contenido PRINCIPAL !---- */
+
+.main {
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Nuestra sección Hero ¡Vamos a estilizarla! */
+
+.hero {
+    text-align: center;
+    padding: 64px 0;
+    margin-bottom: 48px;
+}
+
+.hero__container {
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.hero__title {
+    margin-bottom: 18px;
+    font-size: 50px;
+}
+
+.hero__subtitle {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.hero__description {
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.hero__actions {
+    margin-bottom: 40px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 8px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button--primary {
+    background-color: #9d0707;
+    color: #fff;
+    border-color: white;
+}
+
+.button--secondary {
+    background-color: #fff;
+    border: 2px solid #9d0707;
+    /*Agrega mas cosas en el futuro */
+}
+
+.hero__stats {
+    text-align: center;
+}
+
+.stat {
+    display: inline-block;
+    margin: 0 32px;
+    text-align: center;
+}
+
+.stat__number {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 17px;
+}
+
+.stat__label {
+    font-size: 17px;
+}
+
+.about {
+    padding: 30px 0;
+}
+
+.about__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about__title {
+    text-align: center;
+    margin: 40px;
+}
+
+.about__intro {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 35px;
+}
+
+.about__text {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 18px;
+}
+
+.quote {
+    padding: 24px;
+    background: #f8f9fa;
+    border-left: 4px solid #9d0707;
+    margin: 32px 0;
+}
+
+.quote__text {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.quote__author {
+    display: block;
+    text-align: end;
+    font-size: 14px;
+}
+
+.values {
+    margin-top: 52px;
+}
+
+.values__title {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.values__list {
+    padding: 0;
+}
+
+.values__item {
+    padding: 18px;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 16px;
+}
+
+.values__item__title {
+    font-size: 20px;
+    text-align: center;
+}
+
+.values__item__description {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.values__item:hover {
+    border-color: #9d0707;
+    background: #e0e0e0;
+}
+
+.projects {
+   
+    padding: 21px 0;
+}
+
+.proyect__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.projects__title {
+    text-align: center;
+    margin: 30px
+}
+
+.projects__description {
+    text-align: center;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+}
+
+.projects__grid {
+    padding: 0 20px;
+}
+
+.project {
+    border: 2px solid #666666;
+    padding: 32px;
+    background: #ffffff;
+    margin-bottom: 32px;
+}
+
+.project:hover {
+    border: 2px solid #9d0707;
+}
+
+.project--featured {
+    border: 2px solid #9d0707;
+    position: relative;
+}
+
+.project__title {
+    margin-bottom: 30px;
+}
+
+.project__description {
+    font-size: large;
+}
+
+.project_subtitle {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.project__learnings {
+    list-style: disc;
+    margin-left: 15px;
+    margin-top: 11px;
+    margin-bottom: 15px;
+}
+
+.project__learnings li {
+    margin-bottom: 16px;
+    color: #666666;
+    font-size: 17px;
+}
+
+.project__technologies {
+    display: inline-block;
+    margin-top: 18px;
+    margin-bottom: 30px;
+
+}
+
+.tag {
+    padding: 10px;
+    border-radius: 7px;
+    padding: 10px;
+    background-color: #9d0707;
+    color: #ffffffff;
+    margin-right: 15px;
+}
+
+.project__links {
+    text-align: left;
+}
+
+.project__link {
+    margin-right: 15px;
+    font-size: 17px;
+}
+
+.project__link:hover {
+    text-decoration: underline;
+    color: #666666;
+}
+
+.project__badge {
+    display: inline-block;
+    border-radius: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 4px 16px;
+    color: #ffffff;
+    background-color: #9d0707;
+}
+
+/*Seguimos con la sección de mis habilidades :3 */
+
+.skills {
+    padding: 9px;
+}
+
+.skills__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skills__title {
+    font-size: 36px;
+    text-align: center;
+
+}
+
+.skills__subtitle {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 15px;
+    margin-bottom: 63px;
+}
+
+.skills__list {
+    margin-bottom: 48px;
+}
+
+.skill {
+    margin-bottom: 32px;
+}
+
+.skill__name {
+    color: #666666;
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+.skill__bar {
+    background: #e0e0e0;
+    height: 24px;
+    margin-bottom: 13px;
+    position: relative;
+}
+
+.skill__progress {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #9d0707;
+}
+
+.skill__progress--html {
+    width: 35%;
+}
+
+.skill__progress--css {
+    width: 10%;
+}
+
+.skill__progress--js {
+    width: 25%;
+}
+
+.skill__percentage {
+    color: #666666;
+    font-size: 18px;
+}
+
+.learning {
+    padding: 20px 30px;
+}
+
+.learning__title {
+    text-align: center;
+    margin: 16px;
+}
+
+.learning__list {
+    margin: 5px;
+    text-align: center;
+    color: #666666;
+}
+
+.learning__item {
+    margin-bottom: 15px;
+    font-size: 18px;
+
+}
+
+.learning__item:hover {
+    color: #9d0707;
+    font-size: 20px;
+}
+
+/* Seguimos con la sección de contacto */
+
+.contact {
+    padding: 70px;
+    
+}
+
+.contact__container {}
+
+.contact__title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 35px;
+}
+
+.contact__description {
+    text-align: center;
+}
+
+.contact__methods {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.contact__method {
+    margin: 0 30px;
+    
+}
+
+.contact__method-title {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.contact__link {
+    
+}
+
+.contact__link:hover {
+    font-size: 17px;
+    color: #666666;
+}
+
+.button__method__download {
+    display: flex;
+    justify-content: center;
+    background: #9d0707;
+    width: 250px;
+    border-radius: 6px;
+    padding: 13px;
+    color: #ffffff;
+    margin: 0 auto;
+}
+
+.footer {
+    text-align: center;
+    padding: 48px 0;
+   
+}
+
+.footer__container {
+
+}
+
+.footer__nav {
+    display: inline-block;
+    margin-bottom: 17px;
+}
+
+.footer__nav a {
+    margin: 0 25px;
+}
+
+.footer__copyright {
+
+}
+
+.footer__credits {
+
+}
