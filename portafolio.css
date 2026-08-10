@@ -59,10 +59,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {}
-
-a:active {}
-
 /*Listas*/
 
 ul {
@@ -179,14 +175,23 @@ ul {
 
 .button--primary {
     background-color: #9d0707;
+    border: 2px solid #9d0707;
     color: #fff;
     border-color: white;
+}
+
+.button--primary:hover {
+    font-size: 18px;
 }
 
 .button--secondary {
     background-color: #fff;
     border: 2px solid #9d0707;
     /*Agrega mas cosas en el futuro */
+}
+
+.button--secondary:hover {
+    font-size: 18px;
 }
 
 .hero__stats {
@@ -361,6 +366,17 @@ ul {
     font-size: 17px;
 }
 
+.project__img {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    
+}
+
+.project__img img {
+    width: 50%;
+}
+
 .project__technologies {
     display: inline-block;
     margin-top: 18px;
@@ -478,31 +494,35 @@ ul {
 
 .learning__title {
     text-align: center;
-    margin: 16px;
+    margin: 24px;
+    font-size: 36px;
 }
 
 .learning__list {
+    
     margin: 5px;
     text-align: center;
     color: #666666;
 }
 
 .learning__item {
+    display: inline-block;
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 27px;
+    margin-right: 15px;
 
 }
 
 .learning__item:hover {
     color: #9d0707;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 /* Seguimos con la sección de contacto */
 
 .contact {
-    padding: 70px;
-    
+    padding: 30px 70px;
+    margin-bottom: 30px;
 }
 
 .contact__container {}
@@ -515,6 +535,7 @@ ul {
 
 .contact__description {
     text-align: center;
+    font-size: 25px;
 }
 
 .contact__methods {
@@ -529,16 +550,18 @@ ul {
 }
 
 .contact__method-title {
-    font-size: 21px;
+    text-align: center;
+    font-size: 31px;
     margin-bottom: 15px;
 }
 
 .contact__link {
-    
+    text-align: center;
+    font-size: 22px;
 }
 
 .contact__link:hover {
-    font-size: 17px;
+    font-size: 23px;
     color: #666666;
 }
 
@@ -553,14 +576,22 @@ ul {
     margin: 0 auto;
 }
 
+.button__method__download:hover {
+    background: #f8f9fa;
+    color: #9d0707;
+    border: 3px solid #9d0707;
+}
+
 .footer {
     text-align: center;
-    padding: 48px 0;
-   
+    padding: 10px 0;
+    margin-top: 10px;
+    background: #9d0707;
+    color: #ffffff;
 }
 
 .footer__container {
-
+    padding: 20px;
 }
 
 .footer__nav {
@@ -570,6 +601,12 @@ ul {
 
 .footer__nav a {
     margin: 0 25px;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.footer__nav a:hover {
+    font-size: 23px;
 }
 
 .footer__copyright {
