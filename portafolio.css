@@ -1,9 +1,26 @@
 /*Añadimos nuestra fuente de goglee fonts :3 */
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Quicksand:wght@300&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@418&family=Fira+Code&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /*Primero Vamos a resetear losa estilos bases que nos proporciona el navegador*/
+
+:root {
+    /* Variables "Fonts-families" */
+    --Dancing-Script: "Dancing Script";
+      
+    /* Colores que voy a utilizar a lo largo de todo mi portafolio */
+    /* Color de background principal */
+    --body-color: #FFF2DB;
+
+    --dark: #000000;
+    --dark-red: #9d0707; 
+    --dark-green: #06402B;
+    --dark-yellow: #BA8E23;
+    --dark-blue: #123499;
+    --dark-pink: #C11C84;
+    /* Separadom de los textos */
+    
+}
 
 * {
     margin: 0;
@@ -12,15 +29,15 @@
 }
 
 body {
-   background: #FFF2DB; 
-   font-family: "Dancing Script", monospace;
+   background: var(--body-color);
+   font-family: var(--Dancing-Script), monospace /* Agregamos una segunda fuente para que pueda cargar en cualquier navegador */;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    color: #9d0707;
+    color: var(--dark-red);
 }
 
 h1 {
@@ -44,11 +61,14 @@ h4 {
 
 p {
     margin-bottom: 16px;
+    line-height: 1.3;  /* !--- LINE-HEIGHT ----! PROPIEDAD IMPORTANTE */
+    
+    /* Esta propiedad nos ayuda a elegir un espacio entre cada linea de nuestras fuentes de esta formando     evitando el cansancio visual del usuario  :3*/ 
 }
 
 strong {
     font-weight: bold;
-    color: #9d0707;
+    color: var(--dark-red);
 }
 
 /*Enlaces*/
@@ -115,8 +135,31 @@ ul {
 
 .nav__link:hover {
     font-size: 19px;
-    color: #9d0707;
-    
+}
+
+.nav__link__red:hover {
+    color: var(--dark-red);
+    font-weight: 600;
+}
+
+.nav__link__green:hover {
+    color: var(--dark-green);
+    font-weight: 600;
+}
+
+.nav__link__yellow:hover {
+    color: var(--dark-yellow);
+    font-weight: 600;
+}
+
+.nav__link__pink:hover {
+    color: var(--dark-pink);
+    font-weight: 600;
+}
+
+.nav__link__blue:hover {
+    color: var(--dark-blue);
+    font-weight: 600;
 }
 
 /* ----! Contenido PRINCIPAL !---- */
@@ -174,8 +217,8 @@ ul {
 }
 
 .button--primary {
-    background-color: #9d0707;
-    border: 2px solid #9d0707;
+    background-color: var(--dark-red);
+    border: 2px solid var(--dark-red);
     color: #fff;
     border-color: white;
 }
@@ -186,7 +229,7 @@ ul {
 
 .button--secondary {
     background-color: #fff;
-    border: 2px solid #9d0707;
+    border: 2px solid var(--dark-red);
     /*Agrega mas cosas en el futuro */
 }
 
@@ -244,7 +287,7 @@ ul {
 .quote {
     padding: 24px;
     background: #f8f9fa;
-    border-left: 4px solid #9d0707;
+    border-left: 4px solid var(--dark-red);
     margin: 32px 0;
 }
 
@@ -292,7 +335,7 @@ ul {
 }
 
 .values__item:hover {
-    border-color: #9d0707;
+    border-color: var(--dark-red);
     background: #e0e0e0;
 }
 
@@ -332,11 +375,11 @@ ul {
 }
 
 .project:hover {
-    border: 2px solid #9d0707;
+    border: 2px solid var(--dark-red);
 }
 
 .project--featured {
-    border: 2px solid #9d0707;
+    border: 2px solid var(--dark-red);
     position: relative;
 }
 
@@ -388,7 +431,7 @@ ul {
     padding: 10px;
     border-radius: 7px;
     padding: 10px;
-    background-color: #9d0707;
+    background-color: var(--dark-red);
     color: #ffffffff;
     margin-right: 15px;
 }
@@ -415,7 +458,7 @@ ul {
     font-size: 15px;
     padding: 4px 16px;
     color: #ffffff;
-    background-color: #9d0707;
+    background-color: var(--dark-red);
 }
 
 /*Seguimos con la sección de mis habilidades :3 */
@@ -468,7 +511,7 @@ ul {
     position: absolute;
     top: 0;
     left: 0;
-    background: #9d0707;
+    background: var(--dark-red);
 }
 
 .skill__progress--html {
@@ -514,7 +557,7 @@ ul {
 }
 
 .learning__item:hover {
-    color: #9d0707;
+    color: var(--dark-red);
     font-size: 28px;
 }
 
@@ -568,7 +611,7 @@ ul {
 .button__method__download {
     display: flex;
     justify-content: center;
-    background: #9d0707;
+    background: var(--dark-red);
     width: 250px;
     border-radius: 6px;
     padding: 13px;
@@ -578,15 +621,15 @@ ul {
 
 .button__method__download:hover {
     background: #f8f9fa;
-    color: #9d0707;
-    border: 3px solid #9d0707;
+    color: var(--dark-red);
+    border: 3px solid var(--dark-red);
 }
 
 .footer {
     text-align: center;
     padding: 10px 0;
     margin-top: 10px;
-    background: #9d0707;
+    background: var(--dark-red);
     color: #ffffff;
 }
 
