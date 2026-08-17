@@ -23,7 +23,7 @@
     --dark-purple: #5c2a75;
     --dark-orange: #D35400;
     /*RGBA: (211, 84, 0, 0.25)  (Para sombras) */
-    --dark-esmerald: #059669;
+    --dark-esmerald: #326857;
     --dark-coral: #E11D48;
     --dark-plum: #8B5CF6;
     --dark-pistachio: #65A30D;
@@ -176,9 +176,8 @@ li {
     font-family: var(--Font-family-content);
     font-size: 14px;
     font-weight: 600;
-    color: var(--dark-red);
     background-color: #FFFFFF;
-    border: 1px solid rgba(157, 7, 7, 0.2);
+    border: 1px solid;
     border-radius: 20px;
     text-decoration: none;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.04);
@@ -187,15 +186,7 @@ li {
     border-radius: 9px;
     font-weight: 600;
     /*----! Transición suva para todos los botones :3 !---- de 3 segundos con efecto hover*/
-
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.nav__link:hover {
-    background-color: var(--dark-red);
-    color: #FFFFFF;
-    transform: translateY(-2px);
-    box-shadow: 0px 4px 12px rgba(157, 7, 7, 0.25);
+    transition: transform 0.2s ease;
 }
 
 .nav__link--active {
@@ -203,6 +194,77 @@ li {
     color: #FFFFFF;
     border-color: var(--dark-red);
 }
+
+.nav__link--start {
+    color: var(--dark-red);
+    border: 2px solid var(--dark-red);
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav__link--about__me {
+    color: var(--dark-olive-green);
+    border: 2px solid var(--dark-olive-green);
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav__link--projects {
+    color: var(--dark-yellow);
+    border: 2px solid var(--dark-yellow);
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav__link--skills {
+    color: var(--dark-blue);
+    border: 2px solid var(--dark-blue);
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav__link--contact {
+    color: var(--dark-orange);
+    border: 2px solid var(--dark-orange);
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* !--- HOVER ! DE  NAV--- */
+
+.nav__link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 12px rgba(157, 7, 7, 0.25);
+}
+
+/* ----! Vamos a utilizar este link de "start" cuando agreguemos javascript a la pagina !-----*/
+
+/*.nav__link--start:hover {
+    color: var(--dark-red);
+    background-color: var(--dark-red);
+    border: 2px solid var(--dark-red);
+}*/
+
+.nav__link--about__me:hover {
+    color: #FFFFFF;
+    background-color: var(--dark-olive-green);
+   border-color:  var(--dark-olive-green);
+}
+
+.nav__link--projects:hover {
+    background-color: var(--dark-yellow);
+    color: #FFFFFF;
+   border-color:  var(--dark-yellow);
+}
+
+.nav__link--skills:hover {
+    background-color: var(--dark-blue);
+    color: #FFFFFF;
+   border-color:  var(--dark-blue);
+}
+
+.nav__link--contact:hover {
+    background-color: var(--dark-orange);
+    color: #FFFFFF;
+   border-color:  var(--dark-orange);
+}
+
 
 /* ----! Contenido PRINCIPAL !---- */
 
@@ -216,14 +278,16 @@ li {
 
 .hero {
     text-align: center;
-    color: #ffffff;
+    color: var(--dark);
     border-radius: 16px;
     box-shadow: 0px 12px 15px rgba(157, 7, 7, 0.25);
     padding: 40px 24px;
     margin-bottom: 30px;
-    background: linear-gradient(135deg, var(--dark-red) 0%, #C11C84 100%);
+    background: var(--body-color);
+    border: 3px solid var(--dark-red);
     max-width: 1070px;
     margin: 0 auto;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 
 }
 
@@ -236,7 +300,6 @@ li {
 }
 
 .hero__title {
-    color: #FFFFFF;
     margin-bottom: 18px;
     font-size: 50px;
 }
@@ -266,37 +329,32 @@ li {
     text-align: center;
     cursor: pointer;
     text-decoration: none;
+    border-radius: 20px;
+    background-color: var(--dark-red);
+    color: #FFFFFF;
+    box-shadow: ;
+    transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.button--primary {
+
+.hero:hover {
+    background-color: var(--dark-red);
+    transform: translateY(-7px);
+    color: #FFFFFF;
+}
+
+
+.hero:hover .button {
+    animation: small--leap 0.7s ease;
     background-color: #FFFFFF;
     color: var(--dark-red);
-    box-shadow: 2px 3px 4px -1px #000000;
-    border-radius: 6px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.button--primary:hover {
-    color: #FFFFFF;
-    background: var(--dark-red);
-    transform: translateY(-5px);
-    box-shadow: 0px 4px 12px #FFFFFF
+.button:hover {
+    transform: translateY(-5px)
 }
 
-.button--secondary {
-    background-color: transparent;
-    color: #FFFFFF;
-    border: 2px solid #ffffff;
-    font-weight: 700;
-    box-shadow: 2px 3px 4px -1px #000000;
-    border-radius: 6px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
 
-.button--secondary:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
-}
 
 .hero__stats {
     text-align: center;
@@ -723,7 +781,7 @@ li {
     padding: 16px;
     border-radius: 12px;
     background-color: #FAFAFA;
-    border: 1px solid #EFEFEF;
+    border: 2px solid #EFEFEF;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -824,15 +882,15 @@ li {
 }
 
 .skill--html:hover {
-    border: 2px solid var(--language-html-color);
+    border-color: var(--language-html-color);
 }
 
 .skill--css:hover {
-    border: 2px solid var(--language-css-color);
+    border-color: var(--language-css-color);
 }
 
 .skill--js:hover {
-    border: 2px solid var(--language-js-color);
+    border-color: var(--language-js-color);
 }
 
 .skills:hover .skill__progress--html {
@@ -891,6 +949,7 @@ li {
     font-size: 21px;
     margin-right: 15px;
     letter-spacing: 0.7px;
+    transition: transforms 0.2s ease;
 }
 
 
@@ -899,31 +958,31 @@ li {
 
 .learning__item--first {
     border: 2px solid var(--dark-plum);
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
 }
 
 .learning__item--second {
     border: 2px solid var(--dark-esmerald);
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .learning__item--third {
     border: 2px solid var(--dark-pistachio);
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .learning__item--fourth {
     border: 2px solid var(--dark-coral);
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .learning__item--fifth {
     border: 2px solid var(--dark-olive-green);
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.learning__item:hover {}
+
 
 .learning__container:hover {
     transform: translateY(-5px);
@@ -951,25 +1010,7 @@ li {
     background-color: var(--dark-olive-green);
 }
 
-
-
-.learning__item--first:hover {
-    transform: translateY(-5px);
-}
-
-.learning__item--second:hover {
-    transform: translateY(-5px);
-}
-
-.learning__item--third:hover {
-    transform: translateY(-5px);
-}
-
-.learning__item--fourth:hover {
-    transform: translateY(-5px);
-}
-
-.learning__item--fifth:hover {
+.learning__item:hover {
     transform: translateY(-5px);
 }
 
@@ -980,14 +1021,14 @@ li {
 .contact {
     display: flex;
     justify-content: center;
-    background: #FFFFFF;
+    background: linear-gradient(135deg, #e8d44d 16%, #9d0707 86%);
     min-width: 788px;
     border: 10px solid #FFFFFF;
+    color: #FFFFFF;
     margin: 50px 50px;
     border-radius: 25px;
     padding: 30px 70px;
     margin-bottom: 30px;
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 
@@ -1062,23 +1103,23 @@ li {
     transition: background-color 0.2s ease, transform 0.2s ease;    
 }
 
-.contact:hover {
-    
-    transform: scaleY(1.02);
-}
+
 
 .link__email__account:hover {
     background-color: var(--platform--email-google-color);
+    color: #FFFFFF;    
 }
 
 
 .link__github__account:hover {
     background-color: var(--platform--github--color);
+    color: #FFFFFF;
 }
 
 
 .link__platzi__account:hover {
     background-color: var(--platform--platzi--color);
+    color: #FFFFFF;
 }
 
 
@@ -1106,7 +1147,7 @@ li {
     border-radius: 20px;
     padding: 6px 14px;
     margin: 0 25px;
-    font-size: 22px;
+    font-size: 18px;
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
@@ -1154,9 +1195,7 @@ footer:hover .footer__link {
     animation: small--leap 0.7s ease;
 }
 
-.footer__link {
-    
-}
+/*.footer__link {}  !---- Utilizar esta propiedad en el futuro !---- */ 
 
 .footer:hover .footer__link--start {
     border: 2px solid var(--dark-pink);
@@ -1181,21 +1220,21 @@ footer:hover .footer__link {
 }
 
 .footer__link--start:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
 }
 
 .footer__link--about__me:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
 }
 
 .footer__link--projects:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
 }
 
 .footer__link--skills:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
 }
 
 .footer__link--contact:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
 }
