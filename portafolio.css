@@ -41,21 +41,24 @@
     --platform--platzi--color: #09e989;
     /* Separadom de los textos */
 
-
-  
+    /*Diferentes tipos de medidas para diferentes dispositivos*/
+    --media-queries-laptops-table: 850px;
 }
 
-      @keyframes small--leap {
-        0%, 100% {
-            transform: translateY(0);
-        } 
-        50% {
-            transform: translateY(-15px);
-        }
+@keyframes small--leap {
+
+    0%,
+    100% {
+        transform: translateY(0);
     }
 
+    50% {
+        transform: translateY(-15px);
+    }
+}
 
-    * {
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -135,7 +138,10 @@ li {
 }
 
 .header__container {
-    display: flex;
+    display: grid;
+    grid-template-areas:
+        "brand"
+        "nav";
     justify-content: space-between;
     align-items: center;
     gap: 30px;
@@ -145,6 +151,7 @@ li {
 }
 
 .header__brand {
+    grid-area: brand;
     text-align: center;
     margin-bottom: 15px;
 }
@@ -159,6 +166,7 @@ li {
 }
 
 .nav {
+    grid-area: nav;
     text-align: center;
 }
 
@@ -170,6 +178,7 @@ li {
     gap: 10px;
     padding: 0;
 }
+
 
 .nav__item {
     display: inline-block;
@@ -248,25 +257,25 @@ li {
 .nav__link--about__me:hover {
     color: #FFFFFF;
     background-color: var(--dark-olive-green);
-   border-color:  var(--dark-olive-green);
+    border-color: var(--dark-olive-green);
 }
 
 .nav__link--projects:hover {
     background-color: var(--dark-yellow);
     color: #FFFFFF;
-   border-color:  var(--dark-yellow);
+    border-color: var(--dark-yellow);
 }
 
 .nav__link--skills:hover {
     background-color: var(--dark-blue);
     color: #FFFFFF;
-   border-color:  var(--dark-blue);
+    border-color: var(--dark-blue);
 }
 
 .nav__link--contact:hover {
     background-color: var(--dark-orange);
     color: #FFFFFF;
-   border-color:  var(--dark-orange);
+    border-color: var(--dark-orange);
 }
 
 
@@ -292,29 +301,38 @@ li {
     max-width: 1070px;
     margin: 0 auto;
     transition: transform 0.2s ease, background-color 0.2s ease;
-
 }
 
 .hero__container {
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 0 20px;
     margin: 0 auto;
     max-width: 800px;
 }
 
+
 .hero__title {
+    grid-area: hero--title;
     margin-bottom: 18px;
     font-size: 50px;
 }
 
 .hero__subtitle {
+    grid-area: hero--subtitle;
     font-size: 26px;
     font-weight: 600;
     margin-bottom: 22px;
 }
 
+.hero__title,
+.hero__subtitle {
+    text-align: center;
+}
+
 .hero__description {
+    grid-area: hero--description;
     font-size: 18px;
     margin-left: auto;
     margin-right: auto;
@@ -323,6 +341,7 @@ li {
 }
 
 .hero__actions {
+    grid-area: hero--actions;
     margin-bottom: 40px;
 }
 
@@ -361,10 +380,10 @@ li {
 
 
 .hero__stats {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 16px;
     flex-wrap: wrap;
 }
 
@@ -584,9 +603,57 @@ li {
     border: 2px solid var(--dark-yellow);
 }
 
+
+.project--featured {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "badge"
+        "title"
+        "description"
+        "learnings"
+        "tags"
+        "links";
+    gap: 20px;
+}
+
+
+
+.project--featured .project__badge {
+    grid-area: badge;
+    justify-self: start;
+    /*Evita que el badge se estire*/
+}
+
+.project--featured .project__title {
+    grid-area: title;
+}
+
+
+.project--featured .project__description {
+    grid-area: description;
+}
+
+
+.project--featured .project__learnings {
+    grid-area: learnings;
+}
+
+.project--featured .project__technologies {
+    grid-area: tags;
+}
+
+.project--featured .project__links {
+    grid-area: links;
+}
+
+
+
 .second__project__green {
     border: 2px solid var(--dark-green);
 }
+
+
 
 .third__project__black {
     border: 2px solid var(--dark);
@@ -617,11 +684,6 @@ li {
     background-color: var(--dark);
 }
 
-
-
-.project--featured {
-    position: relative;
-}
 
 .project__title {
     margin-bottom: 30px;
@@ -692,7 +754,7 @@ li {
     background: rgba(34, 139, 34, 0.12);
     color: var(--dark-green);
     border: 1px solid rgba(34, 139, 34, 0.12);
-    ;
+
 }
 
 
@@ -1065,27 +1127,34 @@ li {
     font-size: 20px;
 }
 
-.contact__methods {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    width: 100%;
+.contact__method:nth-child(1) {
+    grid-area: "email";
 }
 
-    /*!---- Sección de media-queries !---- */
+.contact__method:nth-child(2) {
+    grid-area: "github";
+}
 
-    @media (min-width: 768px) {
-        .contact {
-            padding: 30px 70px;
-            border-width: 10px;
-        }
+.contact__method:nth-child(3) {
+    grid-area: "platzi";
+}
 
-        .contact__methods {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
 
-    
+.contact__methods {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+
+    grid-template-areas:
+        "email"
+        "github"
+        "platzi";
+}
+
+
+
+
+
 .contact__method {
     display: flex;
     flex-direction: column;
@@ -1125,14 +1194,14 @@ li {
 
 .link__platzi__account {
     border: 2px solid var(--platform--platzi--color);
-    transition: background-color 0.2s ease, transform 0.2s ease;    
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 
 
 .link__email__account:hover {
     background-color: var(--platform--email-google-color);
-    color: #FFFFFF;    
+    color: #FFFFFF;
 }
 
 
@@ -1150,19 +1219,31 @@ li {
 
 .footer {
     text-align: center;
-    padding: 10px 0;
-    margin-top: 10px;
+    padding: 24px 0;
+    margin-top: 20px;
     color: var(--dark);
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .footer__container {
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 20px;
-}
+    display: grid;
+    grid-template-areas:
+        "footer--nav"
+        "footer--copyright"
+        "footer--credits";
+        gap: 16px;
+        justify-items: center;
+        align-items: center;
+    }
+
+
 
 .footer__nav {
-    display: inline-block;
-    margin-bottom: 17px;
+    grid-area: footer--nav;
+  
 }
 
 
@@ -1171,8 +1252,8 @@ li {
     border: 2px solid #FFFFFF;
     border-radius: 20px;
     padding: 6px 14px;
-    margin: 0 25px;
-    font-size: 18px;
+    margin: 4px 8px;
+    font-size: 16px;
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
@@ -1202,12 +1283,15 @@ li {
 }
 
 .footer__copyright {
+    grid-area: footer--copyright;
     font-size: 15px;
 }
 
 .footer__credits {
+    grid-area: footer--credits;
     font-size: 15px;
 }
+
 
 /*Sección de hover de nuestra sección de footer :3 */
 .footer:hover {
@@ -1220,7 +1304,7 @@ footer:hover .footer__link {
     animation: small--leap 0.7s ease;
 }
 
-/*.footer__link {}  !---- Utilizar esta propiedad en el futuro !---- */ 
+/*.footer__link {}  !---- Utilizar esta propiedad en el futuro !---- */
 
 .footer:hover .footer__link--start {
     border: 2px solid var(--dark-pink);
@@ -1232,12 +1316,12 @@ footer:hover .footer__link {
 
 .footer:hover .footer__link--projects {
     border: 2px solid var(--dark-yellow);
-    
+
 }
 
 .footer:hover .footer__link--skills {
     border: 2px solid var(--dark-esmerald);
-    
+
 }
 
 .footer:hover .footer__link--contact {
@@ -1262,4 +1346,68 @@ footer:hover .footer__link {
 
 .footer__link--contact:hover {
     transform: translateY(-5px);
+}
+
+
+/*!---- Sección de media-queries !---- */
+
+@media (min-width: 768px) {
+    .header__container {
+        grid-template-columns: 1.4fr 1.6fr;
+        grid-template-areas:
+            "brand nav";
+    }
+
+    .header__brand {
+        text-align: left;
+    }
+
+    .nav__list {
+        justify-content: flex-end;
+    }
+
+    .hero__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /*Van a ser 2 columnas de igual tamaño :3*/
+        grid-template-areas:
+            "hero--title hero--title"
+            "hero--subtitle hero--subtitle"
+            "hero--description hero--stats"
+            "hero--actions hero--stats";
+        gap: 20px 30px;
+        align-items: center;
+
+    }
+
+    .contact {
+        padding: 30px 70px;
+        border-width: 10px;
+    }
+
+    .contact__methods {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "email" "github" "platzi";
+    }
+
+    .footer__container {
+        grid-template-columns: 1.8fr 1fr;
+        grid-template-areas: 
+        "footer--nav footer--copyright"
+        "footer--nav footer--credits";
+        gap: 10px 24px;
+        align-items: center;
+    }
+
+    .footer__nav {
+        justify-self: start;
+        text-align: left;
+    }
+
+    
+    .footer__copyright, .footer__credits {
+        justify-self: end;
+        text-align: right;
+    }
 }
